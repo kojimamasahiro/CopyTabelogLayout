@@ -3,15 +3,275 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="350dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="sample.kojimamasahiro.copytabeloglayout.MainActivity">
 
+    <!-- タイトル -->
     <TextView
+        android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="とっても美味しいお店　ＵＭＡＡＩ"
+        android:textColor="@android:color/black"
+        android:textSize="16dp" />
+
+    <!-- ファボボタン -->
+    <ImageView
+        android:id="@+id/favorite_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/title_text"
+        android:layout_alignBottom="@id/title_text"
+        android:src="@android:drawable/checkbox_off_background"
+        android:scaleType="fitCenter" />
+
+    <!-- お店のタイプ -->
+    <TextView
+        android:id="@+id/type_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:text="現在地から100m（徒歩1分） / ステーキ・郷土料理（その他"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14dp"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <!-- スター1 -->
+    <ImageView
+        android:id="@+id/star1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type_text"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:src="@android:drawable/star_on" />
+
+    <!-- スター2 -->
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_toEndOf="@id/star1"
+        android:src="@android:drawable/star_on" />
+
+    <!-- スター3 -->
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_toEndOf="@id/star2"
+        android:src="@android:drawable/star_on" />
+
+    <!-- スター4 -->
+    <ImageView
+        android:id="@+id/star4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_toEndOf="@id/star3"
+        android:src="@android:drawable/star_off" />
+
+    <!-- スター5 -->
+    <ImageView
+        android:id="@+id/star5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_toEndOf="@id/star4"
+        android:src="@android:drawable/star_off" />
+
+    <!-- 点数 -->
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_alignBottom="@id/star1"
+        android:layout_toEndOf="@id/star5"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="4.95"
+        android:textColor="@android:color/black"
+        android:textSize="16dp"
+        android:gravity="center" />
+
+    <!-- コメントアイコン -->
+    <ImageView
+        android:id="@+id/comment_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/star1"
+        android:layout_alignBottom="@id/star1"
+        android:layout_toEndOf="@id/score_text"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:scaleType="fitCenter" />
+
+    <!-- コメント数 -->
+    <TextView
+        android:id="@+id/comment_texte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/star1"
+        android:layout_alignBottom="@id/star1"
+        android:layout_toEndOf="@id/comment_image"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="13"
+        android:textColor="@android:color/black"
+        android:textSize="14dp"
+        android:gravity="center" />
+
+    <!-- ここから下から作る -->
+
+    <!-- 真ん中 -->
+    <android.support.v4.widget.Space
+        android:id="@+id/center"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <!-- 休みアイコン -->
+    <ImageView
+        android:id="@+id/rest_image"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:src="@android:drawable/ic_lock_lock"
+        android:scaleType="fitCenter"/>
+
+    <!-- 休み -->
+    <TextView
+        android:id="@+id/rest_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rest_image"
+        android:layout_alignBottom="@id/rest_image"
+        android:layout_toEndOf="@id/rest_image"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:gravity="center"
+        android:text="月曜日"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12dp" />
+
+    <!-- 場所アイコン -->
+    <ImageView
+        android:id="@+id/position_image"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignTop="@id/rest_image"
+        android:layout_toEndOf="@id/center"
+        android:src="@android:drawable/ic_dialog_map" />
+
+    <!-- 場所 -->
+    <TextView
+        android:id="@+id/position_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rest_image"
+        android:layout_alignBottom="@id/rest_image"
+        android:layout_toEndOf="@id/position_image"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:gravity="center"
+        android:text="東京駅から120m"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12dp" />
+
+    <!-- 夜値段アイコン -->
+    <ImageView
+        android:id="@+id/night_price_image"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_above="@id/rest_image"
+        android:layout_marginBottom="@dimen/basic_margin"
+        android:src="@android:drawable/presence_online" />
+
+    <!-- 夜値段 -->
+    <TextView
+        android:id="@+id/night_price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/night_price_image"
+        android:layout_alignBottom="@id/night_price_image"
+        android:layout_toEndOf="@id/night_price_image"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:gravity="center"
+        android:text="￥3,000～￥3,999"
+        android:textColor="@android:color/black"
+        android:textSize="12dp" />
+
+    <!-- 昼値段アイコン -->
+    <ImageView
+        android:id="@+id/day_price_image"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignTop="@id/night_price_image"
+        android:layout_toEndOf="@id/center"
+        android:src="@android:drawable/presence_offline" />
+
+    <!-- 昼値段 -->
+    <TextView
+        android:id="@+id/day_price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/night_price_image"
+        android:layout_alignBottom="@id/night_price_image"
+        android:layout_toEndOf="@id/day_price_image"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:gravity="center"
+        android:text="￥1,000～￥1,999"
+        android:textColor="@android:color/black"
+        android:textSize="12dp" />
+
+    <!-- セパレーター -->
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/night_price_image"
+        android:layout_marginBottom="@dimen/basic_margin"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 説明文 -->
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/separator"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:layout_marginBottom="@dimen/basic_margin"
+        android:text="東京駅から歩いていける★とってもおいしくておいしいおみせ"
+        android:textSize="16dp" />
+
+    <!-- 画像１ -->
+    <ImageView
+        android:id="@+id/image_image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/center"
+        android:layout_above="@id/description_text"
+        android:layout_below="@id/star1"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:scaleType="center"
+        android:src="@drawable/image1" />
+
+    <!-- 画像２ -->
+    <ImageView
+        android:id="@+id/image_image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/center"
+        android:layout_above="@id/description_text"
+        android:layout_below="@id/star1"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:scaleType="center"
+        android:src="@drawable/image2" />
 </RelativeLayout>
